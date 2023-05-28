@@ -14,11 +14,19 @@ repositories {
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version.set("2022.2.5")
-    type.set("IC") // Target IDE Platform
+    // Set the targeted PyCharm version
+    version.set("2023.1.2")
 
-    plugins.set(listOf(/* Plugin Dependencies */))
+    // Use 'PY' for PyCharm Professional Edition or 'PC' for PyCharm Community Edition
+    type.set("PY")
+
+    // Use both 'Pythonid' for PyCharm Professional Edition and 'PythonCore' for PyCharm Community Edition
+    plugins.set(listOf("Pythonid"))
+
+    // No public source code is available
+    downloadSources.set(false)
 }
+
 
 tasks {
     // Set the JVM compatibility versions
